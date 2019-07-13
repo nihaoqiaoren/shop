@@ -13,3 +13,9 @@ interval="2000">
     </swiper-item>
   </block>
 </swiper>
+<!-- 入口导航 -->
+<view class="inlet">
+  <block wx:for="{{inlets.message}}" wx:key="{{name}}">
+    <image class="inlet-image" src="{{item.image_src}}"></image>
+  </block>
+</view>

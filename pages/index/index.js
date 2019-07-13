@@ -4,14 +4,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swipers:[]
+    swipers:[],
+    inlets:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getSwiper()
+    this.getSwiper(),
+    this.getinlet()
   },
   // 封装轮播图
   getSwiper(){
@@ -25,6 +27,19 @@ Page({
         });
       }
     });
+  },
+  //封装入口函数
+  getinlet(){
+    wx.request({
+      url:'https://api.zbztb.cn/api/public/v1/home/catitems',
+      success:res=>{
+        // console.log(res)
+      const message=res.data;
+      this.setData({
+        inlets:message
+      })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
