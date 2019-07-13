@@ -1,21 +1,34 @@
 <!-- 搜索框 -->
 <Search></Search>
 <!-- 轮播图 -->
-<swiper class="swiper" 
-indicator-dots autoplay 
-circular 
-indicator-color="rgba(255,255,255,.3)" 
-indicator-active-color="#fff" 
-interval="2000">
+<swiper class="swiper" indicator-dots autoplay circular indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" interval="2000">
   <block wx:for="{{swipers.message}}" wx:key="{{ goods_id }}">
-    <swiper-item >
+    <swiper-item>
       <image class="swiper-image" src="{{item.image_src}}"></image>
     </swiper-item>
   </block>
 </swiper>
-<!-- 入口导航 -->
+<!-- 首页入口导航 -->
 <view class="inlet">
   <block wx:for="{{inlets.message}}" wx:key="{{name}}">
     <image class="inlet-image" src="{{item.image_src}}"></image>
   </block>
 </view>
+<!-- 首页楼层 -->
+<block wx:for="{{floor.message}}" wx:key="">
+  <view class="tower-heade">
+    <image class="tower-heade-image" src="{{item.floor_title.image_src}}"></image>
+  </view>
+  <view class="tower-content">
+    <view class="tower-left">
+      <image class="tower-left-image" src="{{item.product_list[0].image_src}}"></image>
+    </view>
+
+    <view class="tower-right">
+      <block wx:for="{{item.product_list}}" wx:key="" wx:for-item="item2" wx:for-index="index2">
+        <image wx:if="{{index2>0}}" class="tower-right-iamge" src="{{item2.image_src}}"></image>
+      </block>
+    </view>
+  </view>
+
+</block>

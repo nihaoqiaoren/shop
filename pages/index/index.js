@@ -5,7 +5,8 @@ Page({
    */
   data: {
     swipers:[],
-    inlets:[]
+    inlets:[],
+    floor: [],
   },
 
   /**
@@ -13,7 +14,8 @@ Page({
    */
   onLoad: function (options) {
     this.getSwiper(),
-    this.getinlet()
+    this.getinlet(),
+    this.getfloorData()
   },
   // 封装轮播图
   getSwiper(){
@@ -33,11 +35,24 @@ Page({
     wx.request({
       url:'https://api.zbztb.cn/api/public/v1/home/catitems',
       success:res=>{
-        // console.log(res)
       const message=res.data;
       this.setData({
         inlets:message
       })
+      }
+    })
+  },
+
+  //封装楼层信息入口函数
+  getfloorData() {
+    wx.request({
+      url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
+      success: res => {
+        // console.log(res)
+        const message = res.data;
+        this.setData({
+          floor: message
+        })
       }
     })
   },
