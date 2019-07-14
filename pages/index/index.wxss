@@ -56,3 +56,16 @@ margin-bottom: 20rpx;
   height: 188rpx;
   margin-left: 7rpx;
 }
+/* 返回顶部 */
+.go-top{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .7);
+  position:fixed;
+  right:20rpx;
+  bottom:0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

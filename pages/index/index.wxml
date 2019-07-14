@@ -32,3 +32,7 @@
   </view>
 
 </block>
+<!-- 返回顶部 -->
+<view class="go-top" hidden="{{showTop}}" bindtap="goTop" data-top="0">
+  <text>顶部</text>
+</view>
