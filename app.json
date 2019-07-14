@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/sort/sort"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,7 +20,7 @@
         "selectedIconPath": "images/tabs/indexSelected.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/sort/sort",
         "text": "分类",
         "iconPath": "images/tabs/tab_classify_nor.png",
         "selectedIconPath": "images/tabs/tab_classify_fill@3x.png"
