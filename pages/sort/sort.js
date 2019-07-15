@@ -1,3 +1,7 @@
+//在page入口导入request模块  导入后用一个名字存起来
+const { request } =require("../../utils/request.js")
+
+
 // pages/sort/sort.js
 Page({
 
@@ -19,26 +23,17 @@ Page({
     this.getSortData()
   },
   getSortData() {
-    // 发送请求前显示加载框
-    wx.showLoading({
-      title: '疯狂加载中.',
-    })
-    wx: wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/categories',
-      //请求成功
-      success: res => {
-        // console.log(res)
-        const { message } = res.data
-        this.setData({
-          sort: message,
-          subSort: message[this.data.activeIndex].children
-        })
-      },
-      //请求完成后
-      complete: res => {
-        //隐藏加载框
-        wx.hideLoading()
-      }
+    // console.log(request)
+    //调用自己封装的    
+    request({ url:"categories"})
+    //请求成功
+    .then(res=>{
+      // console.log(res)
+      //设置页面数据
+      this.setData({
+        sort:res,
+        subSort:res[this.data.activeIndex].children
+      })
     })
   },
   // 点击切换TAB栏事件
@@ -48,7 +43,7 @@ Page({
     const { index } = e.currentTarget.dataset;
     this.setData({
       //改变左侧选中状态
-      activeIndex:index,
+      activeIndex: index,
       //右侧的数据  可以在总数据通过索引来重新绑定
       subSort: this.data.sort[index].children
     })
