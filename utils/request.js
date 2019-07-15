@@ -10,6 +10,7 @@ const request=(params)=>{
   })
   return new Promise((resolve,reject)=>{
     wx.request({
+      ...params,
       // 基本路径+传入的url
       url: baseURL + params.url,
       //请求成功
