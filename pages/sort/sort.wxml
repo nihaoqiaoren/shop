@@ -1,2 +1,25 @@
-<!--pages/sort/sort.wxml-->
-<text>pages/sort/sort.wxml</text>
+<Search></Search>
+<view class="sort-const">
+  <!-- 左边 -->
+  <scroll-view scroll-y class="sort-left">
+    <block wx:for="{{sort}}" wx:key="cat_id">
+      <view  bindtap="changeTab" data-index="{{index}}" class="sort-left-list {{ index === activeIndex ? 'active' : '' }}">{{item.cat_name}}</view>
+    </block>
+  </scroll-view>
+  <!-- 右边 -->
+  <scroll-view scroll-y class="sort-right">
+  
+   <block wx:for="{{subSort}}" wx:key="cat_id">
+    <text class="sort-right-text">{{item.cat_name}}</text>
+    <view class="sort-right-list">
+      <block wx:for="{{item.children}}" wx:key="cat_id" wx:for-item="item2" wx:for-index="index2">
+        <view class="sort-right-const">
+          <image class="sort-right-iamge" src="{{item2.cat_icon}}"></image>
+          <text class="sort-right-iamge-text">{{item2.cat_name}}</text>
+        </view>
+      </block>
+    </view>
+   </block>
+
+  </scroll-view>
+</view>

@@ -1,1 +1,69 @@
-/* pages/sort/sort.wxss */
+.sort-const {
+  /* display: flex; */
+  /* position: relative; */
+}
+
+.sort-left {
+  width: 200rpx;
+  background: #f4f4f4;
+  position: absolute;
+  top: 100rpx;
+  bottom: 0;
+  flex-shrink: 0;
+}
+
+.sort-left-list {
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.sort-left-list.active{
+  background:#ffffff;
+  position: relative;
+}
+.sort-left-list.active::after{
+  content: "";
+  position: absolute;
+  top: 20rpx;
+  bottom: 20rpx;
+  left: 0;
+  width: 10rpx;
+  background-color: #eb4450;
+}
+
+
+.sort-right {
+  width: 550rpx;
+  background: #ffffff;
+  position: absolute;
+  margin-left: 200rpx;
+   top: 100rpx;
+  bottom: 0;
+  flex-shrink: 0;
+}
+.sort-right-text {
+  text-align: center;
+  display: block;
+}
+.sort-right-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.sort-right-const {
+  width: 33.33%;
+  margin: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort-right-iamge {
+  width: 120rpx;
+  height: 120rpx;
+}
+.sort-right-iamge-text{
+  margin-top: 10rpx;
+}
