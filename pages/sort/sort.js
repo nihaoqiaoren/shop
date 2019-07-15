@@ -1,5 +1,5 @@
 //在page入口导入request模块  导入后用一个名字存起来
-const { request } =require("../../utils/request.js")
+const { request } = require("../../utils/request.js")
 
 
 // pages/sort/sort.js
@@ -25,16 +25,16 @@ Page({
   getSortData() {
     // console.log(request)
     //调用自己封装的    
-    request({ url:"categories"})
-    //请求成功
-    .then(res=>{
-      // console.log(res)
-      //设置页面数据
-      this.setData({
-        sort:res,
-        subSort:res[this.data.activeIndex].children
+    request({ url: "categories" })
+      //请求成功
+      .then(res => {
+        // console.log(res)
+        //设置页面数据
+        this.setData({
+          sort: res,
+          subSort: res[this.data.activeIndex].children
+        })
       })
-    })
   },
   // 点击切换TAB栏事件
   changeTab(e) {
