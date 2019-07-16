@@ -14,7 +14,7 @@
       <view class="sort-right-list">
         <block wx:for="{{item.children}}" wx:key="cat_id" wx:for-item="item2" wx:for-index="index2">
           <!-- 不想要点击色块颜色  ?keyword=""-->
-          <navigator hover-class="none" url="/pages/goods_list/goods_list?keyword={{item2.cat_name}}"
+          <navigator hover-class="none" url="/pages/goods_list/goods_list?keyword={{item2.cat_name}}&cid={{item2.cat_id}}"
           class="sort-right-const">
             <image class="sort-right-iamge" src="{{item2.cat_icon}}"></image>
             <text class="sort-right-iamge-text">{{item2.cat_name}}</text>

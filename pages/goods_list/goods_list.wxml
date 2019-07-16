@@ -1,5 +1,4 @@
 <!--pages/goods_list/goods_list.wxml-->
-<text>{{keyword}}</text>
 <view class="search">
   <view class="search-in">
     <icon class="search-icon" size="32rpx" type="search"></icon>
@@ -16,7 +15,7 @@
 <view class="goods-list">
   <block wx:for="{{ goods }}" wx:key="goods_id">
     <view class="goods-item">
-      <image src="{{ item.goods_small_logo }}" class="goods-item-image"></image>
+      <image src="{{ item.goods_small_logo ||'/images/zhanwei.png'}}" class="goods-item-image"></image>
       <view class="goods-item-info">
         <view class="goods-item-info-title">{{ item.goods_name }}</view>
         <view class="goods-item-info-price">￥{{ item.goods_price }}</view>
